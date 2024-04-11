@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+mainClassName = 'org.example.ListBuckets'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation platform('software.amazon.awssdk:bom:2.25.28')
+    implementation 'software.amazon.awssdk:s3'
+    implementation 'org.slf4j:slf4j-simple:1.7.30'
+}
+
+test {
+    useJUnitPlatform()
+}
